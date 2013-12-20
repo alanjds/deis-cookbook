@@ -11,7 +11,7 @@ define :nginx_site, :name => nil, :template => nil, :vars => {} do
     variables(vars)
     # TODO: switch to no-downtime reload once listen port changes
     # are respected, for now port changes are ignored
-    notifies :restart, "service[nginx]", :delayed
+    notifies :reload, "service[nginx]", :delayed
   end
   
   link "/etc/nginx/sites-enabled/#{name}" do
