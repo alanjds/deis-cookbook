@@ -59,7 +59,7 @@ end
     next if config_files.include? f
     file path do
       action :delete
-      notifies :restart, "service[nginx]", :delayed
+      notifies :reload, "service[nginx]", :delayed
     end
   end  
 end
