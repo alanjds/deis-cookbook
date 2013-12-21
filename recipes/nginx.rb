@@ -33,7 +33,7 @@ template '/etc/nginx/nginx.conf' do
 end
 
 service 'nginx' do
-  provider Chef::Provider::Service::Init
+  provider Chef::Provider::Service::Init::Debian
   supports :status => true, :start => true, :stop => true, :restart => true
   action [:enable]
 end
