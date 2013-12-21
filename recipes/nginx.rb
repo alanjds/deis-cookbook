@@ -34,6 +34,6 @@ end
 
 service 'nginx' do
   provider Chef::Provider::Service::Init::Debian
-  supports :status => true, :start => true, :stop => true, :restart => true
+  supports :status => true, :start => true, :stop => true, :reload => true, :restart => true
   action [:enable]
 end
