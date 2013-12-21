@@ -33,5 +33,7 @@ template '/etc/nginx/nginx.conf' do
 end
 
 service 'nginx' do
+  privider Chef::Provider::Service::Init
+  supports :status => true, :start => true, :stop => true, :restart => true
   action [:enable]
 end
